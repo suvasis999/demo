@@ -3,9 +3,6 @@ import cv2
 app = Flask(__name__)
 
 def gen_frames(a,b,c):  
-    print(a)
-    print(b)
-    print(c)
     camera = cv2.VideoCapture(0)
     while True:
         success, frame = camera.read()  # read the camera frame
@@ -31,6 +28,3 @@ def stream_feed():
     return Response(gen_frames(stream,uname,passw), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
-@app.route('/about')
-def about():
-    return 'About'
