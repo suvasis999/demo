@@ -35,5 +35,4 @@ def stream_feed():
     return Response(gen_frames(stream,uname,passw), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    app.run('0.0.0.0', port=5000)
