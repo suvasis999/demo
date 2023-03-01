@@ -35,4 +35,4 @@ def stream_feed():
     return Response(gen_frames(stream,uname,passw), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
-    app.run('0.0.0.0', port=5000)
+    app.run(debug=True)
